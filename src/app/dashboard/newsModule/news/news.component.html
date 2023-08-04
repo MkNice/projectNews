@@ -1,0 +1,11 @@
+<div>
+  <app-filter (filterChanged)="onFilterChanged($event)"></app-filter>
+
+  <h1>
+    <ng-container *ngIf="filterValue">
+      Results: {{ (articles$ | async)?.length }}
+    </ng-container>
+  </h1>
+
+  <app-posts [articles$]="articles$" [filterValue]="filterValue"></app-posts>
+</div>

@@ -1,0 +1,18 @@
+<mat-card class="card">
+  <img mat-card-image class="card-image" [src]="article.image_url" alt="postImg" />
+  <mat-card-subtitle>
+    <img class="icon" src="assets/akar-icons_calendar.svg" alt="icon" />
+    {{ article.published_at | dateFormat }}
+  </mat-card-subtitle>
+  <mat-card-title [innerHTML]="article.title | highLight : filterValue">
+    {{ article.title }}
+  </mat-card-title>
+  <mat-card-content [innerHTML]="article.title | highLight : filterValue">
+    {{ article.summary }}
+  </mat-card-content>
+  <mat-card-actions>
+    <a (click)="onReadMore()" class="post-container-link"
+      >Read more <img src="assets/arrow-right.svg" alt="arrow"
+    /></a>
+  </mat-card-actions>
+</mat-card>
